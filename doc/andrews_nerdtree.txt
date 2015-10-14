@@ -1,0 +1,57 @@
+*andrews_nerdtree.txt*	TODO
+
+==============================================================================
+CONTENTS                                        *andrews_nerdtree*   *andrews_nerdtree-contents*
+
+    Installation................................: |andrews_nerdtree-installation|
+    Usage.......................................: |andrews_nerdtree-usage|
+    Settings....................................: |andrews_nerdtree-settings|
+    Internals...................................: |andrews_nerdtree-internals|
+    Issues......................................: |andrews_nerdtree-issues|
+
+
+==============================================================================
+INSTALLATION                                            *andrews_nerdtree-installation*
+
+There are several ways to install the plugin. The recommended one is by using
+Tim Pope's pathogen (http://www.vim.org/scripts/script.php?script_id=2332). In
+that case, you can clone the plugin's git repository like so:
+>
+    git clone git://github.com/AndrewRadev/andrews_nerdtree.vim.git ~/.vim/bundle/andrews_nerdtree
+<
+If your vim configuration is under git version control, you could also set up
+the repository as a submodule, which would allow you to update more easily.
+The command is (provided you're in ~/.vim):
+>
+    git submodule add git://github.com/AndrewRadev/andrews_nerdtree.vim.git bundle/andrews_nerdtree
+<
+
+Another way is to simply copy all the essential directories inside the ~/.vim
+directory: TODO list of directories
+
+
+==============================================================================
+USAGE                                                          *andrews_nerdtree-usage*
+
+TODO
+
+
+==============================================================================
+SETTINGS                                                    *andrews_nerdtree-settings*
+
+TODO
+
+
+==============================================================================
+INTERNALS                                                  *andrews_nerdtree-internals*
+
+TODO
+
+==============================================================================
+ISSUES                                                        *andrews_nerdtree-issues*
+
+Any issues and suggestions are very welcome on the github bugtracker:
+https://github.com/AndrewRadev/andrews_nerdtree.vim/issues
+
+
+vim:tw=78:sw=4:ft=help:norl:
