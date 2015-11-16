@@ -1,9 +1,4 @@
-task :default do
-  sh 'rspec spec'
-end
-
 desc "Prepare archive for deployment"
 task :archive do
-  puts "TODO"
-  # sh 'zip -r ~/newplugin.zip doc/newplugin.txt'
+  sh 'zip -r ~/andrews_nerdtree.zip autoload/ nerdtree_plugin/ plugin/ doc/andrews_nerdtree.txt'
 end

@@ -1,13 +1,13 @@
-*andrews_nerdtree.txt*	TODO
+*andrews_nerdtree.txt*	A collection of NERDTree plugins
 
 ==============================================================================
-CONTENTS                                        *andrews_nerdtree*   *andrews_nerdtree-contents*
+CONTENTS                          *andrews_nerdtree*   *andrews_nerdtree-contents*
 
-    Installation................................: |andrews_nerdtree-installation|
-    Usage.......................................: |andrews_nerdtree-usage|
-    Settings....................................: |andrews_nerdtree-settings|
-    Internals...................................: |andrews_nerdtree-internals|
-    Issues......................................: |andrews_nerdtree-issues|
+    Installation..............................: |andrews_nerdtree-installation|
+    Usage.....................................: |andrews_nerdtree-usage|
+    Settings..................................: |andrews_nerdtree-settings|
+    Internals.................................: |andrews_nerdtree-internals|
+    Issues....................................: |andrews_nerdtree-issues|
 
 
 ==============================================================================
@@ -27,28 +27,23 @@ The command is (provided you're in ~/.vim):
 <
 
 Another way is to simply copy all the essential directories inside the ~/.vim
-directory: TODO list of directories
+directory: autoload, doc, nerdtree_plugin, plugin.
 
 
 ==============================================================================
-USAGE                                                          *andrews_nerdtree-usage*
+USAGE                                                   *andrews_nerdtree-usage*
 
 TODO
 
 
 ==============================================================================
-SETTINGS                                                    *andrews_nerdtree-settings*
+SETTINGS                                             *andrews_nerdtree-settings*
 
 TODO
 
 
 ==============================================================================
-INTERNALS                                                  *andrews_nerdtree-internals*
-
-TODO
-
-==============================================================================
-ISSUES                                                        *andrews_nerdtree-issues*
+ISSUES                                                 *andrews_nerdtree-issues*
 
 Any issues and suggestions are very welcome on the github bugtracker:
 https://github.com/AndrewRadev/andrews_nerdtree.vim/issues
