@@ -1,5 +1,7 @@
-if !(exists('g:andrews_nerdtree_diff') && g:andrews_nerdtree_diff)
-  finish
+if !(exists('g:andrews_nerdtree_all') && g:andrews_nerdtree_all)
+  if !(exists('g:andrews_nerdtree_diff') && g:andrews_nerdtree_diff)
+    finish
+  endif
 endif
 
 if exists("g:loaded_andrews_nerdtree_diff")
