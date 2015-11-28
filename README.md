@@ -123,4 +123,4 @@ It's just a bag of scripts I've built over the years. There's no common thread c
 
 ## Contributing
 
-Pull requests are welcome, but take a look at [CONTRIBUTING.md](https://github.com/AndrewRadev/andrews_nerdtree.vim/blob/master/CONTRIBUTING.md) first for some guidelines.
+Pull requests are welcome, but bear in mind these are my own personal scripts. I might turn them down if I don't find them useful myself, but who knows.
