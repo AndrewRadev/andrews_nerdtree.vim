@@ -156,7 +156,7 @@ will perform a rename from the left filename to the right one. If you delete
 everything from the arrow onward on a row, that file will be deleted.
 
 Note that the plugin is not particularly sophisticated. If you have any
-suggestions for improvements, please open a github issue and let me know.
+suggestions for improvements, please open a github issue.
 
 Startshell Mapping ~
 

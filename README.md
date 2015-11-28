@@ -103,7 +103,7 @@ Triggering that menu item will open up a new buffer that looks like this:
 
 The filenames on the left side are the original filenames, while the ones on the right are the "output" filenames. If you change any of those, the plugin will perform a rename from the left filename to the right one. If you delete everything from the arrow onward on a row, that file will be deleted.
 
-Note that the plugin is not particularly sophisticated. If you have any suggestions for improvements, please open a github issue and let me know.
+Note that the plugin is not particularly sophisticated. If you have any suggestions for improvements, please open a github issue.
 
 ### Startshell Mapping
 
