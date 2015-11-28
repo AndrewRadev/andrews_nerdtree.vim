@@ -115,6 +115,8 @@ The default mapping used is `S`. You can change it by setting `g:andrews_nerdtre
 let g:andrews_nerdtree_startshell_mapping_key = '<leader>s'
 ```
 
+This plugin was originally created by the author of NERDTree, Marty Grenfell, himself. The original should be here: https://gist.github.com/scrooloose/203928.
+
 ## What's with the stupid name?
 
 It's just a bag of scripts I've built over the years. There's no common thread connecting them, other than that they're for my own NERDTree. Plus, I figure `andrews_nerdtree` should be unique enough. If you're named Andrew and would have liked to create a NERDTree plugin with that name, I'm sorry. Do open an issue to complain, we might figure something out.

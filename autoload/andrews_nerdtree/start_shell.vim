@@ -1,4 +1,7 @@
-" TODO (2015-10-14) Credit
+" This plugin was originally created by the author of NERDTree, Marty
+" Grenfell, himself.
+"
+" The original should be here: https://gist.github.com/scrooloose/203928
 "
 function! andrews_nerdtree#start_shell#Run()
   let node = g:NERDTreeDirNode.GetSelected()

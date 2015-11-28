@@ -168,6 +168,11 @@ The default mapping used is "S". You can change it by setting
 >
     let g:andrews_nerdtree_startshell_mapping_key = '<leader>s'
 <
+This plugin was originally created by the author of NERDTree, Marty
+Grenfell, himself.
+
+The original should be here: https://gist.github.com/scrooloose/203928
+
 
 ==============================================================================
 ISSUES                                                 *andrews_nerdtree-issues*
