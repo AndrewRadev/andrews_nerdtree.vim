@@ -38,8 +38,9 @@ useful myself. It's my personal bag of NERDTree tricks. Which is why it's very
 likely that you won't need every single of these plugins. You can enable or
 disable every one of them individually, or just enable them all at once.
 
-The plugin requres NERDTree (TODO link to vim.org) to be installed. In order
-to enable all plugins, simply put the following in your `.vimrc`:
+The plugin requres NERDTree (https://github.com/scrooloose/nerdtree) to be
+installed. In order to enable all plugins, simply put the following in your
+`.vimrc`:
 >
     let g:andrews_nerdtree_all = 1
 <
@@ -166,7 +167,7 @@ The default mapping used is "S". You can change it by setting
 `g:andrews_nerdtree_startshell_mapping_key`, for instance:
 >
     let g:andrews_nerdtree_startshell_mapping_key = '<leader>s'
-
+<
 
 ==============================================================================
 ISSUES                                                 *andrews_nerdtree-issues*
