@@ -61,7 +61,7 @@ function! andrews_nerdtree#buffer_fs_menu#ExecuteAdd(current_node, new_node_name
     let new_path    = g:NERDTreePath.Create(new_node_name)
     let parent_node = b:NERDTreeRoot.findNode(new_path.getParent())
 
-    let new_tree_node = g:NERDTreeFileNode.New(new_path)
+    let new_tree_node = g:NERDTreeFileNode.New(new_path, b:NERDTree)
     if parent_node != {} && (parent_node.isOpen || !empty(parent_node.children))
       call parent_node.addChild(new_tree_node, 1)
       call NERDTreeRender()
