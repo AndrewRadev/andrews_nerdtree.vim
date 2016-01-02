@@ -22,7 +22,7 @@ function! andrews_nerdtree#buffer_fs_menu#ExecuteMove(current_node, new_path)
 
       if buffer_windownum > 0
         exe buffer_windownum.'wincmd w'
-        exe 'edit '.fnamemodify(new_path, ':.')
+        exe 'edit '.fnameescape(fnamemodify(new_path, ':.'))
         exe current_windownum.'wincmd w'
       endif
 
