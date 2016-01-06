@@ -46,5 +46,9 @@ if !exists('g:andrews_nerdtree_startshell_mapping_key')
   let g:andrews_nerdtree_startshell_mapping_key = 'S'
 endif
 
+if !exists('g:andrews_nerdtree_git_filter')
+  let g:andrews_nerdtree_git_filter = 0
+endif
+
 let &cpo = s:keepcpo
 unlet s:keepcpo
