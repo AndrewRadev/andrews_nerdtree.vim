@@ -17,6 +17,7 @@ let g:andrews_nerdtree_diff               = 1
 let g:andrews_nerdtree_external_open      = 1
 let g:andrews_nerdtree_interactive_edit   = 1
 let g:andrews_nerdtree_startshell_mapping = 1
+let g:andrews_nerdtree_git_filter         = 1
 ```
 
 Setting any of these to 0 or simply omitting them will mean the particular plugin is not loaded.
@@ -116,6 +117,10 @@ let g:andrews_nerdtree_startshell_mapping_key = '<leader>s'
 ```
 
 This plugin was originally created by the author of NERDTree, Marty Grenfell, himself. The original should be here: https://gist.github.com/scrooloose/203928.
+
+### Git Filter
+
+When this plugin is enabled, a command is defined, called `:NERDTreeGitFilterToggle`. Executing this command will make the NERDTree only show files that have been modified by git in some way. This can be useful for reviewing code before committing. Executing it again will turn the filtering off.
 
 ## What's with the stupid name?
 
