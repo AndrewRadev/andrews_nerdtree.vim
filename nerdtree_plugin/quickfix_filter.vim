@@ -22,6 +22,7 @@ endfunction
 command! NERDTreeQuickfixFilter call s:NERDTreeQuickfixFilter()
 function! s:NERDTreeQuickfixFilter()
   let g:andrews_nerdtree_quickfix_filter_on = 1
+  call andrews_nerdtree#quickfix_filter#RefreshCache()
   call andrews_nerdtree#util#Render()
 endfunction
 

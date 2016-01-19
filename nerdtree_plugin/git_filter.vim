@@ -5,7 +5,7 @@ if !(exists('g:andrews_nerdtree_all') && g:andrews_nerdtree_all)
 endif
 
 call NERDTreeAddPathFilter('andrews_nerdtree#git_filter#Callback')
-call g:NERDTreePathNotifier.AddListener("refresh", "andrews_nerdtree#git_filter#RefreshGitCache")
+call g:NERDTreePathNotifier.AddListener("refresh", "andrews_nerdtree#git_filter#RefreshCache")
 
 command! NERDTreeGitFilterToggle call s:NERDTreeGitFilterToggle()
 function! s:NERDTreeGitFilterToggle()
@@ -19,6 +19,7 @@ endfunction
 command! NERDTreeGitFilter call s:NERDTreeGitFilter()
 function! s:NERDTreeGitFilter()
   let g:andrews_nerdtree_git_filter_on = 1
+  call andrews_nerdtree#git_filter#RefreshCache()
   call andrews_nerdtree#util#Render()
 endfunction
 
