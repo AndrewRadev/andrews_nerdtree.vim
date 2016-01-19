@@ -1,4 +1,3 @@
-" TODO Auto-quickfix filter
 " TODO Recursively open?
 " TODO Documentation
 
@@ -14,14 +13,30 @@ call g:NERDTreePathNotifier.AddListener("refresh", "andrews_nerdtree#quickfix_fi
 command! NERDTreeQuickfixFilterToggle call s:NERDTreeQuickfixFilterToggle()
 function! s:NERDTreeQuickfixFilterToggle()
   if exists('g:andrews_nerdtree_quickfix_filter_on')
-    unlet g:andrews_nerdtree_quickfix_filter_on
+    NERDTreeQuickfixFilterOff
   else
-    let g:andrews_nerdtree_quickfix_filter_on = 1
-  endif
-
-  let current_window = winnr()
-  if andrews_nerdtree#util#SwitchToNERDTreeWindow()
-    call NERDTreeRender()
-    call andrews_nerdtree#util#SwitchToWindow(current_window)
+    NERDTreeQuickfixFilter
   endif
 endfunction
+
+command! NERDTreeQuickfixFilter call s:NERDTreeQuickfixFilter()
+function! s:NERDTreeQuickfixFilter()
+  let g:andrews_nerdtree_quickfix_filter_on = 1
+  call andrews_nerdtree#util#Render()
+endfunction
+
+command! NERDTreeQuickfixFilterOff call s:NERDTreeQuickfixFilterOff()
+function! s:NERDTreeQuickfixFilterOff()
+  if exists('g:andrews_nerdtree_quickfix_filter_on')
+    unlet g:andrews_nerdtree_quickfix_filter_on
+    call andrews_nerdtree#util#Render()
+  endif
+endfunction
+
+if g:andrews_nerdtree_quickfix_filter_auto
+  augroup andrews_nerdtree_quickfix_filter
+    autocmd!
+
+    autocmd QuickFixCmdPost * NERDTreeQuickfixFilter
+  augroup END
+endif

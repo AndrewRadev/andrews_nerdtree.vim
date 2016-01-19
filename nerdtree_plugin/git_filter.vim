@@ -10,14 +10,22 @@ call g:NERDTreePathNotifier.AddListener("refresh", "andrews_nerdtree#git_filter#
 command! NERDTreeGitFilterToggle call s:NERDTreeGitFilterToggle()
 function! s:NERDTreeGitFilterToggle()
   if exists('g:andrews_nerdtree_git_filter_on')
-    unlet g:andrews_nerdtree_git_filter_on
+    NERDTreeGitFilterOff
   else
-    let g:andrews_nerdtree_git_filter_on = 1
+    NERDTreeGitFilter
   endif
+endfunction
 
-  let current_window = winnr()
-  if andrews_nerdtree#util#SwitchToNERDTreeWindow()
-    call NERDTreeRender()
-    call andrews_nerdtree#util#SwitchToWindow(current_window)
+command! NERDTreeGitFilter call s:NERDTreeGitFilter()
+function! s:NERDTreeGitFilter()
+  let g:andrews_nerdtree_git_filter_on = 1
+  call andrews_nerdtree#util#Render()
+endfunction
+
+command! NERDTreeGitFilterOff call s:NERDTreeGitFilterOff()
+function! s:NERDTreeGitFilterOff()
+  if exists('g:andrews_nerdtree_git_filter_on')
+    unlet g:andrews_nerdtree_git_filter_on
+    call andrews_nerdtree#util#Render()
   endif
 endfunction

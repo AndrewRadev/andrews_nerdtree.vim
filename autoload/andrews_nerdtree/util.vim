@@ -10,10 +10,29 @@ function! andrews_nerdtree#util#Trim(s)
   return andrews_nerdtree#util#Rtrim(andrews_nerdtree#util#Ltrim(a:s))
 endfunction
 
-" Jump to the NERDTree window in the current tab, if possible. Returns 1 if it
-" succeeded, 0 if it didn't.
+" Rerender the nerdtree, regardless of where we are in the tab
 "
-function! andrews_nerdtree#util#SwitchToNERDTreeWindow()
+function! andrews_nerdtree#util#Render()
+  let current_window = winnr()
+  if s:SwitchToNERDTreeWindow()
+    call NERDTreeRender()
+    exe current_window.'wincmd w'
+  endif
+endfunction
+
+" Returns true if any of the file paths in a:list contain a:path as a prefix.
+"
+function! andrews_nerdtree#util#MatchesFilePrefix(list, path)
+  for entry in a:list
+    if stridx(entry, a:path) == 0
+      return 1
+    endif
+  endfor
+
+  return 0
+endfunction
+
+function! s:SwitchToNERDTreeWindow()
   let nerdtree_buffer = ''
   for bufnr in tabpagebuflist()
     if bufname(bufnr) =~ '^NERD_tree_\d\+$'
@@ -30,21 +49,3 @@ function! andrews_nerdtree#util#SwitchToNERDTreeWindow()
   return 1
 endfunction
 
-" Jump to the given winnr. Used in combination with the above
-" SwitchToNERDTreeWindow function.
-"
-function! andrews_nerdtree#util#SwitchToWindow(winnr)
-  exe a:winnr.'wincmd w'
-endfunction
-
-" Returns true if any of the file paths in a:list contain a:path as a prefix.
-"
-function! andrews_nerdtree#util#MatchesFilePrefix(list, path)
-  for entry in a:list
-    if stridx(entry, a:path) == 0
-      return 1
-    endif
-  endfor
-
-  return 0
-endfunction
