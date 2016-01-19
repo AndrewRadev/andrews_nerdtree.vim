@@ -36,3 +36,15 @@ endfunction
 function! andrews_nerdtree#util#SwitchToWindow(winnr)
   exe a:winnr.'wincmd w'
 endfunction
+
+" Returns true if any of the file paths in a:list contain a:path as a prefix.
+"
+function! andrews_nerdtree#util#MatchesFilePrefix(list, path)
+  for entry in a:list
+    if stridx(entry, a:path) == 0
+      return 1
+    endif
+  endfor
+
+  return 0
+endfunction
