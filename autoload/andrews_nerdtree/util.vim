@@ -48,4 +48,3 @@ function! s:SwitchToNERDTreeWindow()
   exe bufwinnr(nerdtree_buffer).'wincmd w'
   return 1
 endfunction
-

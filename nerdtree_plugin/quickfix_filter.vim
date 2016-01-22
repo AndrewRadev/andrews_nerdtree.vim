@@ -1,6 +1,3 @@
-" TODO Recursively open?
-" TODO Documentation
-
 if !(exists('g:andrews_nerdtree_all') && g:andrews_nerdtree_all)
   if !(exists('g:andrews_nerdtree_quickfix_filter') && g:andrews_nerdtree_quickfix_filter)
     finish
@@ -39,5 +36,9 @@ if g:andrews_nerdtree_quickfix_filter_auto
     autocmd!
 
     autocmd QuickFixCmdPost * NERDTreeQuickfixFilter
+    autocmd BufReadPost,BufDelete *
+          \ if exists('g:andrews_nerdtree_quickfix_filter_on') |
+          \   call andrews_nerdtree#util#Render() |
+          \ endif
   augroup END
 endif
