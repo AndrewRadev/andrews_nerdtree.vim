@@ -26,6 +26,8 @@ An explanation on all the separate plugins follows.
 
 ### Buffer fs menu
 
+![Demo](http://i.andrewradev.com/b1846c6c6e4bea4da2b5e8c06e45b0b9.gif)
+
 This plugin adds a filesystem manipulation menu almost exactly like the default one. The difference is that operations that require entering a file path, namely "add", "move" and "copy", use a separate one-line buffer to receive the input, instead of the default vim dialog. This allows you to use vim keybindings to move around the file path.
 
 Most of the code here is taken directly from Marty Grenfell's original `fs_menu` plugin that ships with the NERDTree. A few minor things have been reformatted, because I liked them better that way.
