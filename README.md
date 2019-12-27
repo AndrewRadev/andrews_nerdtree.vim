@@ -1,15 +1,14 @@
 ## Andrew's NERDTree
 
-This plugin extends the NERDTree plugin with a few additions that I've found useful myself. It's my personal bag of NERDTree tricks. Which is why it's very likely that you won't need every single of these plugins. You can enable or disable every one of them individually, or just enable them all at once.
+This plugin extends the NERDTree Vim plugin with a few additions I've found useful myself. It's my personal bag of NERDTree tricks. Which is why it's very likely that you won't need every single of these plugins. You can enable or disable every one of them individually, or just enable them all at once.
 
-The plugin requres NERDTree (https://github.com/scrooloose/nerdtree) to be installed. In order
-to enable all plugins, simply put the following in your `.vimrc`:
+The plugin requres NERDTree (https://github.com/scrooloose/nerdtree) to be installed. To enable all plugins, simply put the following in your `.vimrc`:
 
 ``` vim
 let g:andrews_nerdtree_all = 1
 ```
 
-In order to enable only a selection of features, use a subset of these:
+To enable only a selection of features, use a subset of these:
 
 ``` vim
 let g:andrews_nerdtree_buffer_fs_menu     = 1
@@ -24,7 +23,7 @@ Setting any of these to 0 or simply omitting them will mean the particular plugi
 
 An explanation on all the separate plugins follows.
 
-### Buffer fs menu
+### Buffer FS menu
 
 ![Demo](http://i.andrewradev.com/b1846c6c6e4bea4da2b5e8c06e45b0b9.gif)
 
@@ -34,18 +33,18 @@ Most of the code here is taken directly from Marty Grenfell's original `fs_menu`
 
 The custom mappings for the special buffer holding the filename are as follows:
 
-  - `o` and `O` do nothing in normal mode, to avoid opening up a second line by accident
-  - `<esc>` or `<C-[>` in normal mode closes the buffer, cancelling the operation
-  - `<C-c>` closes the buffer in both normal and insert mode, cancelling the operation
-  - `<enter>` in both normal and insert mode executes the operation and closes the buffer
+  - `o` and `O` do nothing in **normal** mode, to avoid opening up a second line by accident
+  - `<esc>` and `<C-[>` in **normal** mode close the buffer, cancelling the operation
+  - `<C-c>` closes the buffer in both **normal** and **insert** mode, cancelling the operation
+  - `<enter>` in both **normal** and **insert** mode executes the operation and closes the buffer
 
-Note that the `<enter>` key works even when the completion menu is opened -- you can't use completion in this buffer (a bit of a problem). To that end, if you happen to be using the Acp plugin, it's automatically disabled for the buffer.
+Note that the `<enter>` key works even when the completion menu is opened -- you can't use completion in this buffer (a bit of a problem). To that end, if you happen to be using the Acp plugin, it's automatically disabled for the buffer (yes, this is extremely very niche).
 
 If you leave the buffer, it's automatically closed.
 
 ### Diff
 
-The diff plugin adds a keybinding, which diffs the current node against the closest-open buffer. It's a simple shortcut to triggering `:diffthis`, opening the file and running `:diffthis` again.
+The diff plugin adds a keybinding that diffs the current node against the closest-open buffer. It's a simple shortcut to triggering `:diffthis`, opening the file and running `:diffthis` again.
 
 The default key used is "D". You can change it by setting `g:andrews_nerdtree_diff_key`, for instance:
 
@@ -72,8 +71,7 @@ function! OpenURL(url)
 endfunction
 ```
 
-The default mapping used is `gx`. You can change it by setting
-`g:andrews_nerdtree_external_open_key`, for instance:
+The default mapping used is `gx`. You can change it by setting `g:andrews_nerdtree_external_open_key`, for instance:
 
 ``` vim
 let g:andrews_nerdtree_external_open_key = 'gu'
@@ -118,7 +116,7 @@ The default mapping used is `S`. You can change it by setting `g:andrews_nerdtre
 let g:andrews_nerdtree_startshell_mapping_key = '<leader>s'
 ```
 
-This plugin was originally created by the author of NERDTree, Marty Grenfell, himself. The original should be here: https://gist.github.com/scrooloose/203928.
+This plugin was originally created by the author of NERDTree, Marty Grenfell, himself. The original should be here: https://gist.github.com/scrooloose/203928
 
 ### Git Filter
 
