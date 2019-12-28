@@ -9,6 +9,10 @@ if exists("g:loaded_andrews_nerdtree_start_shell")
 endif
 let g:loaded_andrews_nerdtree_start_shell = 1
 
+if !exists('g:andrews_nerdtree_startshell_mapping_key')
+  let g:andrews_nerdtree_startshell_mapping_key = 'S'
+endif
+
 call NERDTreeAddKeyMap({
             \ 'key':           g:andrews_nerdtree_startshell_mapping_key,
             \ 'callback':      'andrews_nerdtree#start_shell#Run',

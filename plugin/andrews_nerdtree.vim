@@ -18,32 +18,16 @@ if !exists('g:andrews_nerdtree_diff')
   let g:andrews_nerdtree_diff = 0
 endif
 
-if !exists('g:andrews_nerdtree_diff_key')
-  let g:andrews_nerdtree_diff_key = 'D'
-endif
-
 if !exists('g:andrews_nerdtree_external_open')
   let g:andrews_nerdtree_external_open = 0
-endif
-
-if !exists('g:andrews_nerdtree_external_open_key')
-  let g:andrews_nerdtree_external_open_key = 'gx'
 endif
 
 if !exists('g:andrews_nerdtree_interactive_edit')
   let g:andrews_nerdtree_interactive_edit = 0
 endif
 
-if !exists('g:andrews_nerdtree_interactive_edit_key')
-  let g:andrews_nerdtree_interactive_edit_key = 'e'
-endif
-
 if !exists('g:andrews_nerdtree_startshell_mapping')
   let g:andrews_nerdtree_startshell_mapping = 0
-endif
-
-if !exists('g:andrews_nerdtree_startshell_mapping_key')
-  let g:andrews_nerdtree_startshell_mapping_key = 'S'
 endif
 
 if !exists('g:andrews_nerdtree_git_filter')

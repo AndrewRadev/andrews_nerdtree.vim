@@ -9,6 +9,10 @@ if exists("g:loaded_andrews_nerdtree_diff")
 endif
 let g:loaded_andrews_nerdtree_diff = 1
 
+if !exists('g:andrews_nerdtree_diff_key')
+  let g:andrews_nerdtree_diff_key = 'D'
+endif
+
 call NERDTreeAddKeyMap({
       \ 'key':           g:andrews_nerdtree_diff_key,
       \ 'callback':      'andrews_nerdtree#diff#Run',

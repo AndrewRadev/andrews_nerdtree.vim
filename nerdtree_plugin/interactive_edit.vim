@@ -9,6 +9,10 @@ if exists("g:loaded_andrews_nerdtree_interactive_edit")
 endif
 let g:loaded_andrews_nerdtree_interactive_edit = 1
 
+if !exists('g:andrews_nerdtree_interactive_edit_key')
+  let g:andrews_nerdtree_interactive_edit_key = 'e'
+endif
+
 call NERDTreeAddMenuItem({
       \ 'text':     '(e)dit directory contents',
       \ 'shortcut': g:andrews_nerdtree_interactive_edit_key,
