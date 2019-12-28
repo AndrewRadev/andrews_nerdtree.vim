@@ -38,10 +38,6 @@ if !exists('g:andrews_nerdtree_quickfix_filter')
   let g:andrews_nerdtree_quickfix_filter = 0
 endif
 
-if !exists('g:andrews_nerdtree_quickfix_filter_auto')
-  let g:andrews_nerdtree_quickfix_filter_auto = 0
-endif
-
 " Set up a global command that removes all filters
 if g:andrews_nerdtree_all ||
       \ g:andrews_nerdtree_git_filter ||

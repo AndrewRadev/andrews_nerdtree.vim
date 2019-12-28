@@ -4,6 +4,10 @@ if !(exists('g:andrews_nerdtree_all') && g:andrews_nerdtree_all)
   endif
 endif
 
+if !exists('g:andrews_nerdtree_quickfix_filter_auto')
+  let g:andrews_nerdtree_quickfix_filter_auto = 0
+endif
+
 call NERDTreeAddPathFilter('andrews_nerdtree#quickfix_filter#Callback')
 call g:NERDTreePathNotifier.AddListener("refresh", "andrews_nerdtree#quickfix_filter#RefreshCache")
 
