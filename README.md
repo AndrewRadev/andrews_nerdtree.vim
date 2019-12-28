@@ -21,6 +21,20 @@ let g:andrews_nerdtree_git_filter         = 1
 
 Setting any of these to 0 or simply omitting them will mean the particular plugin is not loaded.
 
+It's important that this plugin is activated *before* NERDTree is activated. If you use a plugin manager, make sure they're correctly ordered, for example in vim-plug:
+
+``` vim
+Plug 'AndrewRadev/andrews_nerdtree.vim'
+Plug 'scrooloose/nerdtree'
+```
+
+If you manage plugins manually (with pathogen, or just extracting them in your `~/.vim` directory), try this:
+
+``` vim
+runtime! andrews_nerdtree/plugin.vim
+runtime! nerdtree/plugin.vim
+```
+
 An explanation on all the separate plugins follows.
 
 ### Buffer FS menu
