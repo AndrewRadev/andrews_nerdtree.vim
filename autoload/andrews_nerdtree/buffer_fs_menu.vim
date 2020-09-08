@@ -40,7 +40,13 @@ endfunction
 
 function! andrews_nerdtree#buffer_fs_menu#AddNode()
   let current_node = g:NERDTreeDirNode.GetSelected()
-  let path         = current_node.path.str({'format': 'Glob'}) . g:NERDTreePath.Slash()
+
+  if exists('g:NERDTreePath') && has_key(g:NERDTreePath, 'Slash')
+    " old NERDTree version (e126b87)
+    let path = current_node.path.str({'format': 'Glob'}) . g:NERDTreePath.Slash()
+  else
+    let path = current_node.path.str() . nerdtree#slash()
+  endif
 
   call andrews_nerdtree#buffer_fs_menu#InputBufferSetup(current_node, path, 'append', 'andrews_nerdtree#buffer_fs_menu#ExecuteAdd')
   setlocal statusline=Add
