@@ -70,7 +70,15 @@ function! andrews_nerdtree#buffer_fs_menu#ExecuteAdd(current_node, new_node_name
     call andrews_nerdtree#git_filter#RefreshCache()
 
     let new_tree_node = g:NERDTreeFileNode.New(new_path, b:NERDTree)
-    if parent_node != {} && (parent_node.isOpen || !empty(parent_node.children))
+
+    " Emptying g:NERDTreeOldSortOrder forces the sort to
+    " recalculate the cached sortKey so nodes sort correctly.
+    let g:NERDTreeOldSortOrder = []
+
+    if empty(parent_node)
+      call b:NERDTree.root.refresh()
+      call b:NERDTree.render()
+    elseif parent_node.isOpen || !empty(parent_node.children)
       call parent_node.addChild(new_tree_node, 1)
       call NERDTreeRender()
       call new_tree_node.putCursorHere(1, 0)
