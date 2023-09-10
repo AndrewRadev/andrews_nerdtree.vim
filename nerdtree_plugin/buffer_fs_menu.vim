@@ -34,3 +34,9 @@ if g:NERDTreePath.CopyingSupported()
         \ 'callback': 'andrews_nerdtree#buffer_fs_menu#CopyNode'
         \ })
 endif
+
+call NERDTreeAddKeyMap({
+      \ 'key':           '.',
+      \ 'callback':      'andrews_nerdtree#buffer_fs_menu#Repeat',
+      \ 'quickhelpText': "repeat the last file operation, if possible (move, copy, delete)",
+      \ })

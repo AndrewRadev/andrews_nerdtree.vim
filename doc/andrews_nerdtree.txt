@@ -89,6 +89,13 @@ happen to be using the Acp plugin, it's automatically disabled for the buffer.
 
 If you leave the buffer, it's automatically closed.
 
+If you perform a move of a file to another directory, this operation will be
+repeatable with the |.| mapping. That way, you could move several files
+quickly by editing the first one's path and applying dot-repeat to the others.
+This will only activate if you don't change the actual basename. The copy
+operation is also repeatable under the same conditions, and the delete
+operaiton is always repeatable, but it will still ask for confirmation.
+
 
 Diff ~
 

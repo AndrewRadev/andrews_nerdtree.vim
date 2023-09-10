@@ -8,10 +8,11 @@ endfunction
 
 function! andrews_nerdtree#buffer_fs_menu#ExecuteMove(current_node, new_path)
   let current_node = a:current_node
+  let current_path = current_node.path.str()
   let new_path     = a:new_path
 
   try
-    let bufnum = bufnr(current_node.path.str())
+    let bufnum = bufnr(current_path)
 
     call current_node.rename(new_path)
     call NERDTreeRender()
@@ -31,6 +32,13 @@ function! andrews_nerdtree#buffer_fs_menu#ExecuteMove(current_node, new_path)
 
     call current_node.putCursorHere(1, 0)
     redraw!
+
+    if fnamemodify(current_path, ':t') ==# fnamemodify(new_path, ':t')
+      " The basename is the same, so keep the directory move for a reapply later
+      let b:last_buffer_action = ['move', fnamemodify(new_path, ':h')]
+    else
+      let b:last_buffer_action = []
+    endif
 
     call s:echo('Node moved to '.new_path)
   catch /^NERDTree/
@@ -100,6 +108,7 @@ endfunction
 
 function! andrews_nerdtree#buffer_fs_menu#ExecuteCopy(current_node, new_path)
   let current_node = a:current_node
+  let current_path = current_node.path.str()
   let new_path     = a:new_path
 
   if new_path != ""
@@ -123,6 +132,14 @@ function! andrews_nerdtree#buffer_fs_menu#ExecuteCopy(current_node, new_path)
           call NERDTreeRender()
           call new_node.putCursorHere(0, 0)
         endif
+
+        if fnamemodify(current_path, ':t') ==# fnamemodify(new_path, ':t')
+          " The basename is the same, so keep the directory move for a reapply later
+          let b:last_buffer_action = ['copy', fnamemodify(new_path, ':h')]
+        else
+          let b:last_buffer_action = []
+        endif
+
         call s:echo("Copied to " . new_path)
       catch /^NERDTree/
         call s:echoWarning("Could not copy node")
@@ -163,12 +180,42 @@ function! andrews_nerdtree#buffer_fs_menu#DeleteNode()
         call s:delBuffer(bufnum)
       endif
 
+      let b:last_buffer_action = ['delete', '']
+
       redraw
     catch /^NERDTree/
       call s:echoWarning("Could not remove node")
     endtry
   else
     call s:echo("delete aborted")
+  endif
+endfunction
+
+function! andrews_nerdtree#buffer_fs_menu#Repeat()
+  if !exists('b:last_buffer_action') || len(b:last_buffer_action) != 2
+    echomsg "No repeatable previous action found"
+    return
+  endif
+
+  let [action, subject] = b:last_buffer_action
+  let current_node = g:NERDTreeFileNode.GetSelected()
+  let current_path = current_node.path.str()
+  let current_basename = fnamemodify(current_path, ':t')
+
+  if action == 'move'
+    if subject != current_path
+      let new_path = subject..'/'..current_basename
+      call andrews_nerdtree#buffer_fs_menu#ExecuteMove(current_node, new_path)
+    endif
+  elseif action == 'copy'
+    if subject != current_path
+      let new_path = subject..'/'..current_basename
+      call andrews_nerdtree#buffer_fs_menu#ExecuteCopy(current_node, new_path)
+    endif
+  elseif action == 'delete'
+    call andrews_nerdtree#buffer_fs_menu#DeleteNode()
+  else
+    echomsg "Unknown action: "..action
   endif
 endfunction
 
