@@ -289,7 +289,7 @@ endfunction
 "Args:
 "bufnum: the buffer that may be deleted
 function! s:delBuffer(bufnum)
-  exec "silent bdelete! " . a:bufnum
+  exec "silent! bdelete! " . a:bufnum
 endfunction
 
 function! s:EnsureDirectoryExists(path)
