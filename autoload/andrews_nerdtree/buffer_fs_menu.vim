@@ -250,6 +250,9 @@ function! andrews_nerdtree#buffer_fs_menu#InputBufferSetup(node, content, cursor
   let b:node     = a:node
   let b:callback = function(a:callback_function_name)
 
+  " highlight the current working directory
+  call matchadd('NERDTreeDir', '^\V'..getcwd()..'/')
+
   " disallow opening new lines
   nmap <buffer> o <nop>
   nmap <buffer> O <nop>
