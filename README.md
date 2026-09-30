@@ -142,4 +142,4 @@ It's just a bag of scripts I've built over the years. There's no common thread c
 
 ## Contributing
 
-Pull requests are welcome, but bear in mind these are my own personal scripts. I might turn them down if I don't find them useful myself, but who knows.
+Pull requests are welcome, as long as they **did not involve any LLM usage**. Bear in mind these are my own personal scripts, so I might turn the changes down if I don't find them useful myself, but who knows.
